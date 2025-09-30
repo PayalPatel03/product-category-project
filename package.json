@@ -1,0 +1,30 @@
+{
+  "name": "product-category-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PayalPatel03/product-category-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PayalPatel03/product-category-project/issues"
+  },
+  "homepage": "https://github.com/PayalPatel03/product-category-project#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.3",
+    "multer": "^2.0.2"
+  }
+}
