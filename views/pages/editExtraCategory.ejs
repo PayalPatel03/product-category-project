@@ -42,104 +42,26 @@
           <form
             class="form-horizontal"
             method="post"
-            action=""
-            enctype="multipart/form-data"
+            action="/extracategory/update/<%= extraCategory._id%>"
           >
             <div class="card-body">
-              <h4 class="card-title">Product Info :</h4>
+              <h4 class="card-title">Edit Extra-Category :</h4>
               <div class="form-group row">
                 <label
-                  for="fname"
+                  for="name"
                   class="col-sm-3 text-right control-label col-form-label"
-                  >Title :</label
+                  >Name :</label
                 >
                 <div class="col-sm-9">
                   <input
                     type="text"
-                    name="title"
+                    name="name"
                     class="form-control"
-                    id="title"
-                    placeholder="Enter Title Here"
+                    id="name"
+                    value="<%= extraCategory.name %>"
+                    placeholder="Enter extra-category here"
                   />
                 </div>
-              </div>
-              <div class="form-group row">
-                <label
-                  for="price"
-                  class="col-sm-3 text-right control-label col-form-label"
-                  >Price :</label
-                >
-                <div class="col-sm-9">
-                  <input
-                    type="text"
-                    name="price"
-                    class="form-control"
-                    id="price"
-                    placeholder="Enter price Here"
-                  />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label
-                  for="description"
-                  class="col-sm-3 text-right control-label col-form-label"
-                  >Description :</label
-                >
-                <div class="col-sm-9">
-                  <input
-                    type="text"
-                    name="description"
-                    class="form-control"
-                    id="description"
-                    placeholder="Enter description here"
-                  />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label
-                  for="image"
-                  class="col-sm-3 text-right control-label col-form-label"
-                  >Image :</label
-                >
-                <div class="col-sm-9">
-                  <input
-                    type="file"
-                    name="image"
-                    class="form-control"
-                    id="image"
-                  />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label
-                  for="category"
-                  class="col-sm-3 text-right control-label col-form-label"
-                  >Category :</label
-                >
-                <div class="col-sm-9">
-                  <select name="categoryId" id="" class="form-control">
-                    <option value="" selected disabled>---Select-category---</option>
-                    <% category.forEach((item,idx)=>{ %>
-                      <option value="<%= item._id %>"><%= item.name %></option>
-                    <% }) %>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group row">
-                <label
-                  for="category"
-                  class="col-sm-3 text-right control-label col-form-label"
-                  >Sub-Category:</label
-                >
-                <div class="col-sm-9 ">
-                  <select name="subCategoryId" id="" class="form-control">
-                    <option value="" selected disabled>----- select-subcategory ---</option>
-                    <% subCategory.forEach((item,idx)=>{ %>
-                      <option value="<%= item._id %>"><%= item.name %></option>
-                    <% }) %>
-                  </select>
-                </div>
-                 
               </div>
             </div>
             <div class="border-top">

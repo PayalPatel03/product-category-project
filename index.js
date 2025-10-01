@@ -1,6 +1,7 @@
 const express = require('express')
 const db = require('./config/db')
 const path = require('path')
+const extraCatRouter = require('./routers/extraCategory.route')
 const app = express()
 const port = 3000
 
@@ -11,6 +12,8 @@ app.use(express.static('public'))
 app.use('/uploads',express.static(path.join(__dirname+'/uploads')))
 
 app.use('/',require('./routers'))
+app.use('/extracategory', extraCatRouter)
+
 
 app.listen(port,(err)=>{
     if(!err){
