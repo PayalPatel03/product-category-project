@@ -20,42 +20,7 @@ A Node.js + Express + MongoDB application allowing you to manage **Products** al
 - Multer for file uploads  
 - fs module for file deletion  
 
-## Project Structure
 
-.
-├── controllers/
-│ ├── category.controller.js
-│ ├── product.controller.js
-│ └── subcategory.controller.js
-│ └── extracategory.controller.js
-├── models/
-│ ├── category.model.js
-│ ├── subcategory.model.js
-│ ├── extracategory.model.js
-│ └── product.model.js
-├── middleware/
-│ └── imageUpload.js
-├── routers/
-│ ├── category.routes.js
-│ ├── subcategory.routes.js
-│ ├── extracategory.routes.js
-│ └── product.routes.js
-├── public/
-│ └── (static assets)
-├── uploads/
-│ └── (uploaded images)
-├── views/
-│ ├── pages/
-│ │ ├── form-basic.ejs
-│ │ ├── table.ejs
-│ │ ├── editPage.ejs
-│ │ └── ... (other ejs pages)
-│ └── partials/
-│ ├── header.ejs
-│ └── footer.ejs
-├── .env
-├── index.js
-└── package.json
 
 
 ## Getting Started
