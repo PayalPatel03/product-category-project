@@ -1,24 +1,16 @@
 <%- include('../partials/header.ejs')%>
-<!-- ============================================================== -->
-<!-- End Left Sidebar - style you can find in sidebar.scss  -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!-- Page wrapper  -->
-<!-- ============================================================== -->
+
 <div class="page-wrapper">
-  <!-- ============================================================== -->
-  <!-- Bread crumb and right sidebar toggle -->
-  <!-- ============================================================== -->
   <div class="page-breadcrumb">
     <div class="row">
       <div class="col-12 d-flex no-block align-items-center">
-        <h4 class="page-title">Form Basic</h4>
+        <h4 class="page-title">Edit Product</h4>
         <div class="ml-auto text-right">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">
-                Library
+                Edit Product
               </li>
             </ol>
           </nav>
@@ -26,16 +18,8 @@
       </div>
     </div>
   </div>
-  <!-- ============================================================== -->
-  <!-- End Bread crumb and right sidebar toggle -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- Container fluid  -->
-  <!-- ============================================================== -->
+
   <div class="container-fluid">
-    <!-- ============================================================== -->
-    <!-- Start Page Content -->
-    <!-- ============================================================== -->
     <div class="row">
       <div class="col-md-6">
         <div class="card">
@@ -46,74 +30,81 @@
           >
             <div class="card-body">
               <h4 class="card-title">Edit Product Info :</h4>
+
+              <!-- Title -->
               <div class="form-group row">
-                <label
-                  for="fname"
-                  class="col-sm-3 text-right control-label col-form-label"
-                  >Title :</label
-                >
+                <label class="col-sm-3 text-right control-label col-form-label">Title :</label>
                 <div class="col-sm-9">
-                  <input
-                    type="text"
-                    name="title"
-                    class="form-control"
-                    id="title"
-                    value="<%= product.title %>"
-                    placeholder="Enter Title Here"
-                  />
+                  <input type="text" name="title" class="form-control" 
+                    value="<%= product.title %>" placeholder="Enter Title Here" />
                 </div>
               </div>
+
+              <!-- Price -->
               <div class="form-group row">
-                <label
-                  for="price"
-                  class="col-sm-3 text-right control-label col-form-label"
-                  >Price :</label
-                >
+                <label class="col-sm-3 text-right control-label col-form-label">Price :</label>
                 <div class="col-sm-9">
-                  <input
-                    type="text"
-                    name="price"
-                    class="form-control"
-                    id="price"
-                    value="<%= product.price %>"
-                    placeholder="Enter price Here"
-                  />
+                  <input type="text" name="price" class="form-control" 
+                    value="<%= product.price %>" placeholder="Enter price Here" />
                 </div>
               </div>
+
+              <!-- Description -->
               <div class="form-group row">
-                <label
-                  for="description"
-                  class="col-sm-3 text-right control-label col-form-label"
-                  >Description :</label
-                >
+                <label class="col-sm-3 text-right control-label col-form-label">Description :</label>
                 <div class="col-sm-9">
-                  <input
-                    type="text"
-                    name="description"
-                    class="form-control"
-                    id="description"
-                    value="<%= product.description %>"
-                    placeholder="Enter description here"
-                  />
+                  <input type="text" name="description" class="form-control" 
+                    value="<%= product.description %>" placeholder="Enter description here" />
                 </div>
               </div>
-              <!-- <div class="form-group row">
-                <label
-                  for="image"
-                  class="col-sm-3 text-right control-label col-form-label"
-                  >Image :</label
-                >
+
+              <!-- Category -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-right control-label col-form-label">Category :</label>
                 <div class="col-sm-9">
-                  <input
-                    type="file"
-                    name="image"
-                    class="form-control"
-                    value="<%= product.image %>"
-                    id="image"
-                  />
+                  <select name="category" class="form-control">
+                    <% categories.forEach(cat => { %>
+                      <option value="<%= cat._id %>" 
+                        <%= product.category == cat._id ? 'selected' : '' %>>
+                        <%= cat.name %>
+                      </option>
+                    <% }) %>
+                  </select>
                 </div>
-              </div> -->
+              </div>
+
+              <!-- Sub-Category -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-right control-label col-form-label">Sub-Category :</label>
+                <div class="col-sm-9">
+                  <select name="subcategory" class="form-control">
+                    <% subcategories.forEach(sub => { %>
+                      <option value="<%= sub._id %>" 
+                        <%= product.subcategory == sub._id ? 'selected' : '' %>>
+                        <%= sub.name %>
+                      </option>
+                    <% }) %>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Extra-Category -->
+              <div class="form-group row">
+                <label class="col-sm-3 text-right control-label col-form-label">Extra-Category :</label>
+                <div class="col-sm-9">
+                  <select name="extracategory" class="form-control">
+                    <% extracategories.forEach(extra => { %>
+                      <option value="<%= extra._id %>" 
+                        <%= product.extracategory == extra._id ? 'selected' : '' %>>
+                        <%= extra.name %>
+                      </option>
+                    <% }) %>
+                  </select>
+                </div>
+              </div>
+
             </div>
+
             <div class="border-top">
               <div class="card-body">
                 <button type="submit" class="btn btn-success">Update</button>
@@ -123,22 +114,7 @@
         </div>
       </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End PAge Content -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Right sidebar -->
-    <!-- ============================================================== -->
-    <!-- .right-sidebar -->
-    <!-- ============================================================== -->
-    <!-- End Right sidebar -->
-    <!-- ============================================================== -->
   </div>
-  <!-- ============================================================== -->
-  <!-- End Container fluid  -->
-  <!-- ============================================================== -->
-  <!-- ============================================================== -->
-  <!-- footer -->
-  <!-- ============================================================== -->
+
   <%- include('../partials/footer.ejs')%>
 </div>

@@ -66,20 +66,36 @@ exports.editProduct = async (req, res) => {
   try {
     let { id } = req.params;
     let product = await Product.findById(id);
-    res.render("pages/editPage", { product });
+
+    let categories = await Category.find({});
+    let subcategories = await SubCategory.find({});
+    let extracategories = await ExtraCategory.find({});
+
+    res.render("pages/editPage", { 
+      product, 
+      categories, 
+      subcategories, 
+      extracategories 
+    });
   } catch (error) {
     console.log(error.message);
-    res.render("pages/editPage", { product: [] });
+    res.render("pages/editPage", { 
+      product: {}, 
+      categories: [], 
+      subcategories: [], 
+      extracategories: [] 
+    });
   }
 };
 
-exports.updateProduct = async (req, res) => {
-  try {
-    let { id } = req.params;
-    await Product.findByIdAndUpdate(id, req.body, { new: true });
-    res.redirect("/table");
-  } catch (error) {
-    console.log(error.message);
-    res.redirect("/table");
-  }
-};
+
+  exports.updateProduct = async (req, res) => {
+    try {
+      let { id } = req.params;
+      await Product.findByIdAndUpdate(id, req.body, { new: true });
+      res.redirect("/table");
+    } catch (error) {
+      console.log(error.message);
+      res.redirect("/table");
+    }
+  };
