@@ -1,4 +1,4 @@
-const ExtraCategory = require("../models/subcategory.model")
+const ExtraCategory = require("../models/extracategory.model")
 
 exports.create = (req,res)=>{
     res.render('pages/extra-category')

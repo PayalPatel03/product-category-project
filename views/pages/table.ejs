@@ -48,6 +48,9 @@
                                       <th scope="col">Title</th>
                                       <th scope="col">Price</th>
                                       <th scope="col">Description</th>
+                                      <th scope="col">Category</th>
+                                      <th scope="col">Sub-category</th>
+                                      <th scope="col">Extra-category</th>
                                       
                                       <th scope="col">Action</th>
                                     </tr>
@@ -62,6 +65,9 @@
                                             <td><%= title%></td>
                                             <td><%= price%></td>
                                             <td><%= description %></td>
+                                             <td><%= item.categoryId ? item.categoryId.name : "N/A" %></td>
+        <td><%= item.subCategoryId ? item.subCategoryId.name : "N/A" %></td>
+        <td><%= item.extraCategoryId ? item.extraCategoryId.name : "N/A" %></td>
                                            
                                             <td>
                                                 <a href="/delete/<%= id %>" class="btn btn-danger me-1">Delete</a>

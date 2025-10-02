@@ -118,9 +118,11 @@
                 >
                 <div class="col-sm-9">
                   <select name="categoryId" id="" class="form-control">
-                    <option value="" selected disabled>---Select-category---</option>
+                    <option value="" selected disabled>
+                      ---Select-category---
+                    </option>
                     <% category.forEach((item,idx)=>{ %>
-                      <option value="<%= item._id %>"><%= item.name %></option>
+                    <option value="<%= item._id %>"><%= item.name %></option>
                     <% }) %>
                   </select>
                 </div>
@@ -131,15 +133,38 @@
                   class="col-sm-3 text-right control-label col-form-label"
                   >Sub-Category:</label
                 >
-                <div class="col-sm-9 ">
+                <div class="col-sm-9">
                   <select name="subCategoryId" id="" class="form-control">
-                    <option value="" selected disabled>----- select-subcategory ---</option>
+                    <option value="" selected disabled>
+                      ----- select-subcategory ---
+                    </option>
                     <% subCategory.forEach((item,idx)=>{ %>
-                      <option value="<%= item._id %>"><%= item.name %></option>
+                    <option value="<%= item._id %>"><%= item.name %></option>
                     <% }) %>
                   </select>
                 </div>
-                 
+
+                <div class="form-group mt-3 row">
+                  <label
+                    for="extraCategory"
+                    class="col-sm-3 text-right control-label col-form-label"
+                  >
+                    Extra-Category:
+                  </label>
+                  <div class="col-sm-9 text-center">
+                    <select
+                      name="extraCategoryId"
+                      id="extraCategory"
+                      class="form-control w-75 mx-auto "
+                    >
+                      <option value="" selected disabled >
+                        --- Select-Extra-Category ---</option>
+                      <% extraCategory.forEach((item, idx) => { %>
+                      <option value="<%= item._id %>"><%= item.name %></option>
+                      <% }) %>
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="border-top">

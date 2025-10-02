@@ -2,6 +2,7 @@ const Category = require("../models/category.model");
 const Product = require("../models/product.model");
 const fs = require("fs");
 const SubCategory = require("../models/subcategory.model");
+const ExtraCategory = require("../models/extracategory.model");
 
 exports.homePage = (req, res) => {
   res.render("pages/index");
@@ -11,10 +12,11 @@ exports.formBasicPage = async (req, res) => {
   try {
     let category = await Category.find({})
     let subCategory = await SubCategory.find({})
-    res.render("pages/form-basic",{category,subCategory});
+    const extraCategory = await ExtraCategory.find();
+    res.render("pages/form-basic",{category,subCategory,extraCategory});
   } catch (error) {
     console.log(error.message)
-    res.render("pages/form-basic",{category:[],subCategory:[]});
+    res.render("pages/form-basic",{category:[],subCategory:[],extraCategory:[]});
   }
 };
 
@@ -24,7 +26,7 @@ exports.editPage = (req, res) => {
 
 exports.tablePage = async (req, res) => {
   try {
-    let product = await Product.find({}).populate('categoryId').populate('subCategoryId')
+    let product = await Product.find({}).populate('categoryId').populate('subCategoryId').populate('extraCategoryId')
     // return res.json(product)
     res.render("pages/table", { product });
   } catch (error) {

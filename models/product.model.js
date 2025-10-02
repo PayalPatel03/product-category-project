@@ -12,6 +12,10 @@ const productSchema = new mongoose.Schema({
     subCategoryId : {
         type:mongoose.Schema.Types.ObjectId,
         ref : 'sub-category',
+    },
+    extraCategoryId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'extra-category',
     }
 })
 
